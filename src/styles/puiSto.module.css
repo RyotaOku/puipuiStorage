@@ -1,0 +1,1726 @@
+.header {
+  width: 100%;
+  height: 50px;
+  /* background: rgba(0, 0, 0, 0.8); */
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  background: #0078d4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header h1 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  padding-left: 20px;
+  font-family: serif;
+}
+
+.header .searchForm {
+  width: 400px;
+  height: 32px;
+  padding: 0 5px;
+  font-size: 14px;
+  position: absolute;
+  left: calc(50% - 400px/2);
+  background: #f8f8f8;
+  border: none;
+  border-radius: 2px;
+}
+
+.header .searchForm:focus {
+  outline: none;
+  background: #fff;
+  border: none;
+}
+
+.header .logoutButton {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: url('https://cdn-icons-png.flaticon.com/512/56/56805.png') no-repeat;
+  background-size: 80% auto;
+  background-position: center center;
+  filter: brightness(10) invert(1);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.searchingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00000044;
+  z-index: 15;
+}
+
+.searchingWrap {
+  position: absolute;
+  background: #fff;
+  width: 400px;
+  height: fit-content;
+  max-height: 300px;
+  top: 50px;
+  left: calc(50% - 400px/2);
+  border-radius: 4px;
+  z-index: 16;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  animation: .2s search forwards;
+  opacity: 1;
+}
+
+@keyframes search {
+  0% {
+    opacity: 0;
+    transform: scaleX(.2) translateY(-80px);
+    border-radius: 50%;
+  }
+
+  50% {
+    opacity: .5;
+    /* transform: scaleX(.7); */
+    border-radius: 20%;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    border-radius: 4px;
+  }
+}
+
+.searchResult {}
+
+.searchResult:hover {}
+
+.searchFiles {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.searchFiles .searchPreviewImage {
+  position: absolute;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.root {
+  font-family: serif;
+  font-size: 8px;
+  position: absolute;
+  top: 6px;
+  left: 60px;
+  color: #999;
+}
+
+.searchPreviewIcon {
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 10px;
+  display: block;
+  background: url('https://www.iconpacks.net/icons/2/free-file-icon-1453-thumb.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.searchFiles .searchFileName {
+  display: block;
+  padding: 0 0 0 15px;
+}
+
+.searchFiles:hover {
+  background: #f8f8f8;
+}
+
+.searchFiles:last-child {
+  border: none;
+}
+
+
+.mainFlexWrap {
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.leftMenu {
+  width: 350px;
+  height: 100%;
+  /* background: #c1c1c1; */
+  border-right: 1px solid #c2c2c26f;
+  position: relative;
+}
+
+.leftMenu .accountName {
+  margin: 80px 0 80px 30px;
+  font-size: 18px;
+  font-family: serif;
+  display: inline-block;
+}
+
+.leftMenu .selectMenu {
+  width: 98%;
+  margin: 0 1%;
+  list-style: none;
+  padding: 0;
+}
+
+.leftMenu .selectMenu li {
+  width: 90%;
+  position: relative;
+  /* height: 40px; */
+  padding: 20px 0 20px 50px;
+  margin: 1px auto;
+  cursor: pointer !important;
+  border-radius: 2px;
+  /* border: 1px solid #000; */
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.leftMenu .selectMenu li:first-child {
+  border-top: 1px solid #e9e9e9;
+}
+
+.leftMenu .selectMenu li::before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 25px;
+  display: inline-block;
+  width: 20px;
+  height: 25px;
+}
+
+.leftMenu .selectMenu li:nth-child(1)::before {
+  content: '';
+  background: url('https://www.iconpacks.net/icons/2/free-folder-icon-1449-thumb.png') no-repeat;
+  background-size: 90%;
+  background-position: center center;
+}
+
+.leftMenu .selectMenu li:nth-child(2)::before {
+  content: '';
+  background: url('https://static.thenounproject.com/png/1518831-200.png') no-repeat;
+  background-size: 90%;
+  background-position: center center;
+}
+
+.leftMenu .selectMenu li:nth-child(3)::before {
+  content: '';
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Army_star_of_the_USSR_armed_forces.svg/2148px-Army_star_of_the_USSR_armed_forces.svg.png') no-repeat;
+  background-size: 90%;
+  background-position: center center;
+}
+
+.leftMenu .selectMenu li:nth-child(4)::before {
+  content: '';
+  background: url('https://cdn-icons-png.flaticon.com/512/2891/2891491.png') no-repeat;
+  background-size: 90%;
+  background-position: center center;
+}
+
+.leftMenu .selectMenu li:hover {
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.leftMenu .storageWrap {
+  height: 80px;
+  width: 90%;
+  box-shadow: 0px 0px 3px #919191b7;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: absolute;
+  left: calc(50% - 90%/2);
+  bottom: 15px;
+  cursor: pointer;
+}
+
+.leftMenu .storageLabel {
+  display: block;
+  padding-left: 12px;
+  padding-top: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.leftMenu .storage {
+  position: absolute;
+  display: block;
+  bottom: 34px;
+  width: 90%;
+  height: 5px;
+  border: none;
+  background: none;
+  left: calc(50% - 90%/2);
+  cursor: pointer;
+}
+
+.leftMenu .storage::-webkit-progress-bar {
+  border-radius: 15px;
+  background: #e3e3e3;
+}
+
+.leftMenu .storage::-webkit-progress-value {
+  border-radius: 15px;
+  background: #0078d4;
+}
+
+.leftMenu .storage::-moz-progress-bar {
+  border-radius: 15px;
+}
+
+.leftMenu .storage::-ms-fill {
+  border-radius: 15px;
+}
+
+.leftMenu .storageWrap p {
+  position: absolute;
+  bottom: 8px;
+  color: #0078d4;
+  font-size: 14px;
+  left: 12px;
+}
+
+.main {
+  width: calc(100% - 350px);
+  height: 100%;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.main .fileTableMiddle {
+  width: 100%;
+  height: calc(100% - 130px);
+  padding: 20px 20px 20px 20px;
+  position: relative;
+}
+
+.main .fileTableMiddle tbody {
+  width: 100%;
+  position: relative;
+}
+
+.main .fileTableMiddle tbody tr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: self-start;
+  gap: 15px;
+  position: relative;
+}
+
+.main .fileTableMiddle tbody td {
+  width: 200px;
+  /* overflow: hidden; */
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  padding: 25px 25px 10px 25px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main .fileDetail tbody td {
+  position: relative;
+}
+
+.main .fileTableMiddle tbody .starItem::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  left: 15px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Army_star_of_the_USSR_armed_forces.svg/2148px-Army_star_of_the_USSR_armed_forces.svg.png') no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.main .fileDetail tbody .starItem::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  left: 5px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Army_star_of_the_USSR_armed_forces.svg/2148px-Army_star_of_the_USSR_armed_forces.svg.png') no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.main .fileTableMiddle tbody td:hover {
+  background: #f8f8f8;
+}
+
+.main .fileTableMiddle tbody td div {
+  width: 100%;
+  height: 70%;
+  margin-bottom: 5%;
+  background: #b1b1b1;
+  cursor: pointer;
+  background: url('https://www.iconpacks.net/icons/2/free-file-icon-1453-thumb.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.main .fileTableMiddle tbody td:has(.previewImage) div {
+  background: none;
+}
+
+.main .fileTableMiddle tbody td:not(:has(.previewImage)) .image {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .pdf,
+.pdf {
+  background: url('https://cdn-icons-png.flaticon.com/512/337/337946.png?w=360') !important;
+  background-repeat: no-repeat !important;
+  background-size: 70% auto !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .text,
+.text {
+  background: url('https://cdn-icons-png.flaticon.com/512/104/104647.png?w=360') !important;
+  background-repeat: no-repeat !important;
+  background-size: 70% auto !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .audio,
+.audio {
+  background: url('https://icons.iconarchive.com/icons/untergunter/leaf-mimes/512/audio-x-generic-icon.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .video,
+.video {
+  background: url('https://www.icons101.com/icon_png/size_256/id_83212/MP4.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .html,
+.html {
+  background: url('https://www.shareicon.net/data/2016/01/29/269601_html_256x256.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .zip,
+.zip {
+  background: url('https://www.freeiconspng.com/thumbs/file-zip-icon/file-zip-icon-5.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .word,
+.word {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/.docx_icon.svg/2048px-.docx_icon.svg.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .excel,
+.excel {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/.xlsx_icon.svg/2048px-.xlsx_icon.svg.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .powerpoint,
+.powerpoint {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/.pptx_icon_%282019%29.svg/2048px-.pptx_icon_%282019%29.svg.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .octet_stream,
+.octet_stream {
+  background: url('https://aux2.iconspalace.com/uploads/448592549.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 60% auto !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .FOLDER,
+.FOLDER {
+  background: url('https://www.iconpacks.net/icons/2/free-folder-icon-1484-thumb.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  background-position: center center !important;
+}
+
+.main .fileTableMiddle tbody td .pdfIframe {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 5px;
+  position: relative;
+}
+
+.main .fileTableMiddle tbody td div:has(iframe)::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  display: block;
+  width: calc(100% - 70px);
+  height: calc(100% - 95px);
+  cursor: pointer;
+  z-index: 9;
+}
+
+.main .fileTableMiddle tbody td .previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main .fileTableMiddle tbody td p {
+  height: 30%;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main .fileTableMiddle tbody td:hover .checkLabel {
+  display: block;
+}
+
+.main .fileTableMiddle tbody td .check {
+  display: none;
+}
+
+.main .fileTableMiddle tbody td .checkLabel {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  display: none;
+}
+
+.main .fileTableMiddle tbody td .check:checked~.checkLabel {
+  background: #0078d4;
+  border: 1px solid #0078d4;
+  display: block;
+}
+
+.main .fileTableMiddle tbody td p .directoryName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 100%;
+}
+
+.main .fileTableMiddle tbody td p .directoryName:hover {
+  text-decoration: underline;
+}
+
+.main .fileTableMiddle tbody td p .tooltip {
+  background: #fff !important;
+  border: 1px solid #000;
+  width: fit-content;
+  max-width: 200px;
+  font-size: 12px;
+  height: fit-content;
+  text-align: left;
+  padding: 2px 5px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  position: absolute;
+  top: 80%;
+  display: none;
+  z-index: 10;
+}
+
+.main .fileTableMiddle tbody td p:hover .tooltip {
+  display: block;
+  z-index: 10;
+  animation: forwards .4s tooltip;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+@keyframes tooltip {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.main .fileTableMiddle tbody td p .modification {
+  display: inline-block;
+  width: 100%;
+  padding: 0 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  color: #888;
+}
+
+.main .fileTableMiddle tbody td input {
+  display: block;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #ff3c3c;
+  background: #fff;
+  padding: 0 4px;
+  border-radius: 2px;
+  /* width: 100%; */
+  width: fit-content;
+  height: 50%;
+  font-size: 14px;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+.main .fileTableLarge tbody td {
+  scale: 1.3;
+  /* padding: 20px px 5px 15px; */
+  /* border: 1px solid #000; */
+}
+
+.main .fileTableLarge tbody td div {
+  scale: 1;
+}
+
+.main .fileTableLarge tbody tr {
+  gap: 80px;
+}
+
+.main .fileTableLarge tbody tr td .directoryName {
+  scale: .9;
+}
+
+.main .fileTableLarge tbody tr td .modification {
+  scale: .8;
+}
+
+.main .fileTableLarge {
+  /* border: 1px solid #000; */
+  padding: 40px;
+}
+
+
+
+.main .fileTableVeryLarge tbody td {
+  width: 350px;
+  height: 350px;
+  aspect-ratio: 1/1;
+}
+
+.main .fileTableVeryLarge tbody td div {
+  height: 80%;
+  margin-bottom: 5px;
+}
+
+.main .fileTableVeryLarge tbody td p {
+  height: 20%;
+}
+
+.main .fileTableVeryLarge tbody td p .directoryName {
+  font-size: 18px;
+}
+
+.main .fileTableVeryLarge tbody td .modification {
+  font-size: 16px;
+}
+
+.main .fileTableVeryLarge tbody tr {
+  gap: 80px;
+}
+
+.main .fileTableVeryLarge tbody tr td .directoryName {}
+
+.main .fileTableVeryLarge tbody tr td .modification {}
+
+.main .fileTableVeryLarge {
+  /* border: 1px solid #000; */
+  padding: 40px;
+}
+
+
+
+
+
+.main .fileTableSmall tbody td {
+  padding: 8px 8px 0px 8px;
+  margin: 0;
+  width: 150px;
+}
+
+.main .fileTableSmall tbody td div {
+  background-size: 70% auto !important;
+  height: 75%;
+}
+
+.main .fileTableSmall tbody tr {
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.main .fileTableSmall tbody tr td p {
+  height: 15%;
+}
+
+.main .fileTableSmall tbody tr td .directoryName {
+  scale: .9;
+}
+
+.main .fileTableSmall tbody tr td .modification {
+  display: none;
+}
+
+.main .fileTableSmall {
+  padding: 40px;
+  padding: 0;
+}
+
+
+
+
+
+
+.main .fileDetail {
+  width: 100%;
+  height: calc(100% - 130px);
+  padding: 20px 20px 20px 20px;
+  /* border: 1px solid #000; */
+}
+
+.main .fileDetail tbody {
+  width: 100%;
+}
+
+.main .fileDetail tbody tr {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: self-start;
+  gap: 15px;
+}
+
+.main .fileDetail tbody td {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #dddddd;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  align-items: center;
+  /* padding: 5px 25px 5px 25px; */
+  border-radius: 6px;
+}
+
+.main .fileDetail tbody td .previewImage {
+  height: 50px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.main .fileDetail tbody td:hover {
+  background: #f8f8f8;
+}
+
+.main .fileDetail tbody td div {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+  background: url('https://www.iconpacks.net/icons/2/free-file-icon-1453-thumb.png');
+  background-repeat: no-repeat;
+  /* background: #000; */
+  background-size: contain;
+  background-position: center center;
+}
+
+.main .fileDetail tbody td .pdfIframe {
+  display: none;
+}
+
+.main .fileDetail tbody td p {
+  height: 100%;
+  width: 100%;
+  /* background: #000; */
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.main .fileDetail tbody td p .directoryName {
+  width: fit-content;
+  max-width: 75%;
+  margin-right: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.main .fileDetail tbody td p .modification {
+  margin-right: 10%;
+}
+
+.main .fileDetail tbody td p .tooltip {
+  background: #fff !important;
+  border: 1px solid #000;
+  width: fit-content;
+  max-width: 200px;
+  font-size: 12px;
+  height: fit-content;
+  text-align: left;
+  padding: 2px 5px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  position: absolute;
+  top: 10px;
+  display: none;
+  z-index: 15;
+}
+
+.main .fileDetail tbody td p:hover .tooltip {
+  display: block;
+  animation: forwards .4s tooltip;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.main .fileDetail tbody td input {
+  display: block;
+  padding: 0;
+  border-radius: 2px;
+  height: 60%;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #ff3c3c;
+  margin-right: 50px;
+  padding: 0 4px;
+}
+
+.main .fileDetail tbody td input:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main .menuBar {
+  width: calc(100%);
+  height: 60px;
+  position: sticky;
+  padding: 0 0 0 20px;
+  top: 0;
+  left: 0;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid #c2c2c26f;
+  z-index: 10;
+}
+
+.menuBar .menuBar_left {
+  /* border: 1px solid #000; */
+  height: 35px;
+}
+
+.menuBar .menuBar_left .createButton {
+  background: #0078d4;
+  display: inline-block;
+  border: none;
+  color: #fff;
+  height: 100%;
+  width: 110px;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 900;
+  position: relative;
+  cursor: pointer;
+}
+
+.menuBar .menuBar_left .createButton::after {
+  content: '';
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  width: 1.5px;
+  height: 16px;
+}
+
+.menuBar .menuBar_left .createButton::before {
+  content: '';
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  width: 16px;
+  height: 1.5px;
+}
+
+.menuBar .menuBar_left .createButton:hover {
+  background: #0071c8;
+}
+
+.menuBar .menuBar_left .uploadButton {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 5px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.menuBar .menuBar_left .uploadButton:hover {
+  background: #f8f8f8;
+}
+
+.menuBar .menuBar_right {
+  height: 35px;
+}
+
+.menuBar .menuBar_right .sort {
+  font-size: 14px;
+  padding: 5px 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menuBar .menuBar_right .sort:hover {
+  background: #f8f8f8;
+}
+
+.menuBar .menuBar_right .objectSize {
+  font-size: 14px;
+  padding: 5px 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-left: 10px;
+}
+
+.menuBar .menuBar_right .objectSize:hover {
+  background: #f8f8f8;
+}
+
+.topicsWrap {
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  top: 60px;
+  left: 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 10;
+}
+
+.topicsWrap .topicsInner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(248, 248, 248);
+  background: rgba(248, 248, 248, 0.6);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 6px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.topicsWrap .topicsInner .allClear {
+  position: absolute;
+  right: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.topicsWrap .topicsInner .allClear:hover {
+  background: #f8f8f8;
+}
+
+.topicsWrap .topics {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.topicsWrap .topics:hover {
+  background: #f8f8f8;
+}
+
+.backButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: .5px solid #dce0ef;
+  outline: 1px solid #465691;
+  background: #41a7c6;
+  box-shadow: 0px 8px 8px 5px #254e91 inset;
+  position: relative;
+  cursor: pointer;
+}
+
+.backButton::before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: saturate(180%) blur(20px);
+  filter: blur(10px);
+  display: block;
+  border-radius: 28px 28px 0 0;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.backButton::after {
+  content: '';
+  background: url('https://sozai.cman.jp/img-icon/arrow_base_side1.png') no-repeat;
+  background-size: 70% 60%;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  filter: brightness(1) invert(.99);
+  z-index: 10;
+}
+
+.forwardButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-left: 5px;
+  border: .5px solid #dce0ef;
+  outline: 1px solid #465691;
+  background: #41a7c6;
+  box-shadow: 0px 8px 8px 5px #254e91 inset;
+  position: relative;
+  cursor: pointer;
+}
+
+.forwardButton::before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: saturate(180%) blur(20px);
+  filter: blur(10px);
+  display: block;
+  border-radius: 28px 28px 0 0;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.forwardButton::after {
+  content: '';
+  background: url('https://sozai.cman.jp/img-icon/arrow_base_side1.png') no-repeat;
+  background-size: 70% 60%;
+  background-position: center center;
+  transform: rotate(180deg);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  filter: brightness(1) invert(.99);
+  z-index: 10;
+}
+
+.forwardButton:hover,
+.backButton:hover {
+  background: #41a7c6;
+  box-shadow: 0px 8px 8px 5px #18386c inset;
+}
+
+.topicsWrap .topicsSymbol {
+  margin: 0 5px 0 2px;
+  color: #999;
+  font-size: 14px;
+}
+
+.topicsWrap .topicsInner div:last-child {
+  font-weight: bold;
+}
+
+.contextMenu {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background: #fff;
+  width: 250px;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0px 0px 4px #919191b7;
+  cursor: pointer;
+  animation: showContextMenu .2s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes showContextMenu {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contextMenu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.contextMenu ul li {
+  list-style: none;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  padding: 9px 0 0 5px;
+  border-radius: 4px;
+  margin: 4px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.contextMenu ul li:hover {
+  background: #f8f8f8;
+}
+
+.contextMenu ul li:first-child {
+  margin-top: 0;
+}
+
+.contextMenu ul li:last-child {
+  margin-bottom: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  z-index: 5;
+}
+
+.confOverlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000051;
+  z-index: 10;
+}
+
+.confOverlay .confModalWrap {
+  position: absolute;
+  width: 40%;
+  max-width: 600px;
+  min-width: 500px;
+  height: 300px;
+  background: #fff;
+  inset: 0;
+  margin: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  animation: isShowModal .1s forwards;
+  scale: .6;
+  opacity: 0;
+}
+
+@keyframes isShowModal {
+  0% {
+    scale: .6;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.confOverlay .confModalWrap .modalTitle {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-weight: normal;
+  padding: 15px 0 0 20px;
+  font-size: 20px;
+}
+
+.confOverlay .confModalWrap .modalMessage {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.confOverlay .confModalWrap .modalImage {
+  position: absolute;
+  bottom: 20px;
+  left: 35px;
+  width: 150px;
+  height: 150px;
+  background: url('https://3.bp.blogspot.com/-XvksuNB19gY/Vqqvw5kq8pI/AAAAAAAA3Y8/k4-82Mi61wk/s450/bluebird_baka.png');
+  background-position: center center;
+  background-size: contain;
+}
+
+.confirmButton {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #fff;
+  bottom: 25px;
+}
+
+.confirmButton:hover {
+  filter: brightness(.9);
+}
+
+.confirmCancelButton {
+  right: 160px;
+  background: #8b8b8b;
+}
+
+.confirmConsentButton {
+  right: 30px;
+  background: #0078d4;
+}
+
+.fullPreviewWrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 10;
+  animation: preview .08s forwards;
+  opacity: 1;
+  scale: 1;
+}
+
+@keyframes preview {
+  0% {
+    opacity: 0;
+    scale: .8;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.fullPreviewWrap header {
+  height: 50px;
+  background: #fff;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  align-items: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.fullPreviewWrap h1 {
+  position: absolute;
+  display: inline-block;
+  width: fit-content;
+  inset: 0;
+  margin: auto;
+  font-weight: normal;
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.fullPreviewWrap .downloadButton {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 5px;
+  text-decoration: none;
+  height: 35px;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+}
+
+.fullPreviewWrap .downloadButton:hover {
+  background: #0065b1;
+}
+
+.fullPreviewWrap .closeButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 10px 0 100px;
+  position: relative;
+}
+
+.fullPreviewWrap .closeButton:hover {
+  background: #eee;
+}
+
+.fullPreviewWrap .closeButton:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 1px);
+  transform: rotate(45deg);
+  height: 20px;
+  display: block;
+  border-right: 1px solid #000;
+}
+
+.fullPreviewWrap .closeButton::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 1px);
+  transform: rotate(-45deg);
+  height: 20px;
+  display: block;
+  border-right: 1px solid #000;
+}
+
+.fullPreviewWrap div {
+  display: block;
+  margin: 15px;
+  width: calc(100% - 30px);
+  height: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fullPreviewWrap div img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.fullPreviewPdf {
+  display: block;
+  width: 95%;
+  height: 90%;
+  margin: 1.4% auto 0;
+  border: none;
+}
+
+.fullPreviewWrap .previewIcon {
+  width: 15%;
+  height: 300px;
+  margin: 15% auto 0;
+}
+
+.fullPreviewWrap p {
+  text-align: center;
+}
+
+.settingWrap {
+  position: absolute;
+  background: #fff;
+  width: 40%;
+  min-width: 500px;
+  height: 500px;
+  inset: 0;
+  margin: auto;
+  z-index: 50;
+  border-radius: 6px;
+  padding: 30px;
+  animation: .1s setting forwards;
+  opacity: 1;
+}
+
+@keyframes setting {
+  0% {
+    opacity: 0;
+    border-radius: 50%;
+    scale: .2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.settingWrap h2 {
+  font-size: 20px;
+  font-family: serif;
+}
+
+.settingWrap ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.settingWrap ul li {
+  /* border: 1px solid #eaeaea; */
+  width: 100%;
+  height: 55px;
+  padding: 15px 0 0 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  color: #666;
+}
+
+.settingWrap ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 2.5%;
+  width: 95%;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.settingWrap ul li:hover {
+  background: #f8f8f8;
+  color: #000;
+}
+
+.settingWrap .ussrButton {
+  background-color: #bb1414;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.6rem;
+  padding: .4rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 90%;
+  height: 70px;
+  max-width: 460px;
+  cursor: pointer;
+  margin: 25px auto 0;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.settingWrap .ussrButton:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.settingWrap .ussrButton:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+.settingWrap h3 {
+  font-family: serif;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.settingWrap input[type="radio"] {
+  /* display: block; */
+}
+
+.settingWrap .inputWrap {
+  padding: 20px 0 40px 20px;
+}
+
+.settingWrap .storageCaution {
+  height: 0;
+  color: #db1313;
+  font-size: 14px;
+}
+
+.settingWrap .storageBackButton {
+  background-color: #c4b99e;
+  color: #5a4d3f;
+  border: 1px solid #93846a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  text-decoration: line-through;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 40px;
+  right: 350px;
+}
+
+.settingWrap .storageBackButton:hover {
+  background-color: #b29c83;
+  color: #4a3d31;
+  border-color: #7f6d53;
+}
+
+.settingWrap .storageChangeButton {
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  animation: button 1s forwards ease-out;
+  transform-origin: bottom right;
+  transform: scale(.8);
+}
+
+@keyframes button {
+  0% {
+    transform: scale(.8);
+  }
+
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+#USSR .header {
+  background: #db1313;
+}
+
+#USSR .header h1 {
+  color: #efef00;
+  font-weight: bold;
+}
+
+#USSR .header .logoutButton {
+  /* filter:none; */
+  filter: brightness(10) invert(0);
+}
+
+#USSR .header input {
+  background: #e2e228;
+  color: #db1313;
+}
+
+#USSR .header input::placeholder {
+  color: #ea7676;
+}
+
+#USSR .main,
+#USSR .leftMenu {
+  background: #fff8f8;
+}
+
+#USSR .leftMenu ul li:hover,
+#USSR .main .sort:hover,
+#USSR .main .objectSize:hover {
+  background: #fde9e9;
+}
+
+#USSR .main .topicsInner {
+  background: #db1313;
+  color: #ff0;
+}
+
+#USSR .main .createButton {
+  background: #db1313;
+}
+
+#USSR .main td:hover {
+  background: #fde9e9;
+}
+
+#USSR .confOverlay .confModalWrap .modalImage {
+  background: url('https://www.pngall.com/wp-content/uploads/10/Mikhail-Gorbachev-PNG-Cutout.png') no-repeat;
+  background-size: contain;
+}
+
+.detailsWrap {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  background: #fff;
+  inset: 0;
+  margin: auto;
+  z-index: 15;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.detailsWrap h3 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.detailsWrap table {
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  height: 90%;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.detailsWrap tbody th {
+  text-align: right;
+  width: 40%;
+  font-weight: normal;
+}
+
+.detailsWrap tbody th:after {
+  content: ':';
+  margin: 0 10px 0 5px;
+}
+
+.detailsWrap tbody tr:last-child td:after {
+  content: 'B';
+}
