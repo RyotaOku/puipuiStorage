@@ -2,7 +2,7 @@
 
 ### Overview
 A cloud storage system built using React, TypeScript, and PostgreSQL. One of the less-ideal parts is that only a fraction of the system uses Reducers, with most of the functionality being managed in `index.tsx`.  
-*(概要: React TypeScript Postgressを用いて、クラウドストレージを作成してみた。Reducerが一部しか導入されておらず、ほとんど全ての動作をindex.tsxで管理しているのは改善の余地あり。)*
+*(概要: React TypeScript PostgreSQLを用いて、クラウドストレージを作成してみた。Reducerが一部しか導入されておらず、ほとんど全ての動作をindex.tsxで管理しているのは改善の余地あり。)*
 
 ### Screenshot or GIF
 ![puisto](https://github.com/RyotaOku/puipuiStorage/assets/114388961/5ada265c-879c-4da6-a5fb-9ab0c7e3a12c)
